@@ -1,0 +1,55 @@
+================================================================================
+HURRICANE IMPACT ANALYSIS REPORT
+================================================================================
+Analysis Date: 2025-10-15 13:33:41
+Date Range: 2024-09-15 to 2024-09-15
+Total Hurricanes Analyzed: 2
+Total Exposure: $0.00
+
+SUMMARY STATISTICS
+----------------------------------------
+Total Affected Airports: 0
+Total Daily Travelers at Risk: 0
+Total Potential Claims: 0
+
+HURRICANE EP092024 DETAILED ANALYSIS
+--------------------------------------------------
+Peak Intensity: tropical_storm
+Current Status: tropical_depression
+Track Length: 124.8 km
+Duration: 18.0 hours
+
+AIRPORT IMPACTS:
+  Affected Airports: 0
+  Total Travelers: 0
+  High Impact Airports: 0
+  Medium Impact Airports: 0
+  Low Impact Airports: 0
+
+INSURANCE EXPOSURE:
+  Total Exposure: $0.00
+  Potential Claims: 0
+  Risk Score: 0.0/100
+
+TOP 5 AFFECTED AIRPORTS:
+
+HURRICANE WP142024 DETAILED ANALYSIS
+--------------------------------------------------
+Peak Intensity: category_1
+Current Status: tropical_depression
+Track Length: 1355.4 km
+Duration: 90.0 hours
+
+AIRPORT IMPACTS:
+  Affected Airports: 0
+  Total Travelers: 0
+  High Impact Airports: 0
+  Medium Impact Airports: 0
+  Low Impact Airports: 0
+
+INSURANCE EXPOSURE:
+  Total Exposure: $0.00
+  Potential Claims: 0
+  Risk Score: 0.0/100
+
+TOP 5 AFFECTED AIRPORTS:

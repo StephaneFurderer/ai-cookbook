@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fbe1f1eee46e2d080aee9efe1d7190e4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+        <div style="position: fixed; 
+                    bottom: 50px; left: 50px; width: 200px; height: 200px; 
+                    background-color: white; border:2px solid grey; z-index:9999; 
+                    font-size:14px; padding: 10px">
+        <p><b>Hurricane Impact Map</b></p>
+        <p><i class="fa fa-circle" style="color:red"></i> Hurricane Track</p>
+        <p><i class="fa fa-circle" style="color:orange"></i> Impact Zones</p>
+        <p><b>Airports by Impact:</b></p>
+        <p><i class="fa fa-circle" style="color:gray"></i> No Impact</p>
+        <p><i class="fa fa-circle" style="color:gold"></i> Low Impact</p>
+        <p><i class="fa fa-circle" style="color:darkorange"></i> Medium Impact</p>
+        <p><i class="fa fa-circle" style="color:crimson"></i> High Impact</p>
+        <p><b>Marker Size:</b> Passenger Volume</p>
+        </div>
+        
+    
+            <div class="folium-map" id="map_fbe1f1eee46e2d080aee9efe1d7190e4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fbe1f1eee46e2d080aee9efe1d7190e4 = L.map(
+                "map_fbe1f1eee46e2d080aee9efe1d7190e4",
+                {
+                    center: [25.0, -70.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ce43232f6b483aa80e1534a4fcd2d15d = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_ce43232f6b483aa80e1534a4fcd2d15d.addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+            var poly_line_ad273ae2648bdb9825dcf85a076e2a17 = L.polyline(
+                [[17.2, -81.7], [17.39, -81.83], [17.83, -82.06], [18.25, -82.69], [18.61, -83.42]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_1c302e2c5388593af6841918ae31b401 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de797062b60b7e679436c3d9690e3738 = $(`<div id="html_de797062b60b7e679436c3d9690e3738" style="width: 100.0%; height: 100.0%;">Hurricane AL972024 Track</div>`)[0];
+                popup_1c302e2c5388593af6841918ae31b401.setContent(html_de797062b60b7e679436c3d9690e3738);
+            
+        
+
+        poly_line_ad273ae2648bdb9825dcf85a076e2a17.bindPopup(popup_1c302e2c5388593af6841918ae31b401)
+        ;
+
+        
+    
+    
+            var circle_marker_11bb1294e81d8a06682d84bb8e88f2ba = L.circleMarker(
+                [17.2, -81.7],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00BFFF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_d6cd80f93987216c13d228a420d558a0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_07fac4e06c3350590b2baf9a75b82ac7 = $(`<div id="html_07fac4e06c3350590b2baf9a75b82ac7" style="width: 100.0%; height: 100.0%;">             <b>Hurricane Position</b><br>             Time: 2024-09-23 12:00<br>             Wind Speed: 30.0 knots<br>             Category: Tropical Depression<br>             Position: 17.200°, -81.700°             </div>`)[0];
+                popup_d6cd80f93987216c13d228a420d558a0.setContent(html_07fac4e06c3350590b2baf9a75b82ac7);
+            
+        
+
+        circle_marker_11bb1294e81d8a06682d84bb8e88f2ba.bindPopup(popup_d6cd80f93987216c13d228a420d558a0)
+        ;
+
+        
+    
+    
+            var circle_marker_ba34c53382a0ea19dc48675178842343 = L.circleMarker(
+                [17.39, -81.83],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00BFFF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_19921b6ef1cba4888a8217aebfc99a79 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a5262a302f7870d4118bee3fef07a9ca = $(`<div id="html_a5262a302f7870d4118bee3fef07a9ca" style="width: 100.0%; height: 100.0%;">             <b>Hurricane Position</b><br>             Time: 2024-09-23 18:00<br>             Wind Speed: 27.7 knots<br>             Category: Tropical Depression<br>             Position: 17.390°, -81.830°             </div>`)[0];
+                popup_19921b6ef1cba4888a8217aebfc99a79.setContent(html_a5262a302f7870d4118bee3fef07a9ca);
+            
+        
+
+        circle_marker_ba34c53382a0ea19dc48675178842343.bindPopup(popup_19921b6ef1cba4888a8217aebfc99a79)
+        ;
+
+        
+    
+    
+            var circle_marker_3ce0998017dd7f213a63c06fd70c3751 = L.circleMarker(
+                [17.83, -82.06],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#00BFFF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_7b2f58ebf4ae34f160318ff550d1c36e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_60c30e17fd6651a828e18238e588988b = $(`<div id="html_60c30e17fd6651a828e18238e588988b" style="width: 100.0%; height: 100.0%;">             <b>Hurricane Position</b><br>             Time: 2024-09-24 00:00<br>             Wind Speed: 32.1 knots<br>             Category: Tropical Depression<br>             Position: 17.830°, -82.060°             </div>`)[0];
+                popup_7b2f58ebf4ae34f160318ff550d1c36e.setContent(html_60c30e17fd6651a828e18238e588988b);
+            
+        
+
+        circle_marker_3ce0998017dd7f213a63c06fd70c3751.bindPopup(popup_7b2f58ebf4ae34f160318ff550d1c36e)
+        ;
+
+        
+    
+    
+            var circle_marker_28afd72f8b0884df71c383a41bb508ac = L.circleMarker(
+                [18.25, -82.69],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E90FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_1db73264f6d5cd6356c87c61f8a7b465 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_67a0076bc1be76cada20af7e8b53d4b1 = $(`<div id="html_67a0076bc1be76cada20af7e8b53d4b1" style="width: 100.0%; height: 100.0%;">             <b>Hurricane Position</b><br>             Time: 2024-09-24 06:00<br>             Wind Speed: 35.6 knots<br>             Category: Tropical Storm<br>             Position: 18.250°, -82.690°             </div>`)[0];
+                popup_1db73264f6d5cd6356c87c61f8a7b465.setContent(html_67a0076bc1be76cada20af7e8b53d4b1);
+            
+        
+
+        circle_marker_28afd72f8b0884df71c383a41bb508ac.bindPopup(popup_1db73264f6d5cd6356c87c61f8a7b465)
+        ;
+
+        
+    
+    
+            var circle_marker_9ee62d95dbafa27c5c11ff9a4e252081 = L.circleMarker(
+                [18.61, -83.42],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#1E90FF", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_8bbb11afe5ba75cdcd3d52d431b26da9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b026267cfb0b4135b52950fd2f72426a = $(`<div id="html_b026267cfb0b4135b52950fd2f72426a" style="width: 100.0%; height: 100.0%;">             <b>Hurricane Position</b><br>             Time: 2024-09-24 12:00<br>             Wind Speed: 38.6 knots<br>             Category: Tropical Storm<br>             Position: 18.610°, -83.420°             </div>`)[0];
+                popup_8bbb11afe5ba75cdcd3d52d431b26da9.setContent(html_b026267cfb0b4135b52950fd2f72426a);
+            
+        
+
+        circle_marker_9ee62d95dbafa27c5c11ff9a4e252081.bindPopup(popup_8bbb11afe5ba75cdcd3d52d431b26da9)
+        ;
+
+        
+    
+    
+            var circle_8ab27dd922852c1964a7605222ccae78 = L.circle(
+                [17.2, -81.7],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100000, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_1cf60a069e3119c0496a601755f0c7e5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_880770305d29ded08f754cfeacf12e4a = $(`<div id="html_880770305d29ded08f754cfeacf12e4a" style="width: 100.0%; height: 100.0%;">                 <b>Impact Zone</b><br>                 Time: 2024-09-23 12:00<br>                 Wind Speed: 30.0 knots<br>                 Radius: 100 km<br>                 Category: Tropical Depression                 </div>`)[0];
+                popup_1cf60a069e3119c0496a601755f0c7e5.setContent(html_880770305d29ded08f754cfeacf12e4a);
+            
+        
+
+        circle_8ab27dd922852c1964a7605222ccae78.bindPopup(popup_1cf60a069e3119c0496a601755f0c7e5)
+        ;
+
+        
+    
+    
+            var circle_3c68f3f271c04a4a93478194a33056e2 = L.circle(
+                [17.39, -81.83],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 55503.04114126872, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_64b4329fbd36b4b57205cb0f070c5b95 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1963d945650177e2872bcc1b0dc05e0 = $(`<div id="html_d1963d945650177e2872bcc1b0dc05e0" style="width: 100.0%; height: 100.0%;">                 <b>Impact Zone</b><br>                 Time: 2024-09-23 18:00<br>                 Wind Speed: 27.7 knots<br>                 Radius: 56 km<br>                 Category: Tropical Depression                 </div>`)[0];
+                popup_64b4329fbd36b4b57205cb0f070c5b95.setContent(html_d1963d945650177e2872bcc1b0dc05e0);
+            
+        
+
+        circle_3c68f3f271c04a4a93478194a33056e2.bindPopup(popup_64b4329fbd36b4b57205cb0f070c5b95)
+        ;
+
+        
+    
+    
+            var circle_3eb16a72a9338b8f60720608a78bc181 = L.circle(
+                [17.83, -82.06],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 65726.12889070297, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_b63d5cdbc06efbdd48d00e14c0cf2816 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_82ab77a4d4ae7dfd02e91a85fce9dd4c = $(`<div id="html_82ab77a4d4ae7dfd02e91a85fce9dd4c" style="width: 100.0%; height: 100.0%;">                 <b>Impact Zone</b><br>                 Time: 2024-09-24 00:00<br>                 Wind Speed: 32.1 knots<br>                 Radius: 66 km<br>                 Category: Tropical Depression                 </div>`)[0];
+                popup_b63d5cdbc06efbdd48d00e14c0cf2816.setContent(html_82ab77a4d4ae7dfd02e91a85fce9dd4c);
+            
+        
+
+        circle_3eb16a72a9338b8f60720608a78bc181.bindPopup(popup_b63d5cdbc06efbdd48d00e14c0cf2816)
+        ;
+
+        
+    
+    
+            var circle_e549aa07ac9a5bcf90126b0a084d60b0 = L.circle(
+                [18.25, -82.69],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75153.84240456235, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_ccc85018505470e93d42a854b5233ebb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4faea700e76b9ec341180a9ed95c4b0b = $(`<div id="html_4faea700e76b9ec341180a9ed95c4b0b" style="width: 100.0%; height: 100.0%;">                 <b>Impact Zone</b><br>                 Time: 2024-09-24 06:00<br>                 Wind Speed: 35.6 knots<br>                 Radius: 75 km<br>                 Category: Tropical Storm                 </div>`)[0];
+                popup_ccc85018505470e93d42a854b5233ebb.setContent(html_4faea700e76b9ec341180a9ed95c4b0b);
+            
+        
+
+        circle_e549aa07ac9a5bcf90126b0a084d60b0.bindPopup(popup_ccc85018505470e93d42a854b5233ebb)
+        ;
+
+        
+    
+    
+            var circle_3707e8e783e9743672fdb5ca766819eb = L.circle(
+                [18.61, -83.42],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 96944.4944029286, "stroke": true, "weight": 2}
+            ).addTo(map_fbe1f1eee46e2d080aee9efe1d7190e4);
+        
+    
+        var popup_63b0a6792a19c9a4bdf7989189a94f6d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7200449dba2d5a428dabf27da91bf2f = $(`<div id="html_f7200449dba2d5a428dabf27da91bf2f" style="width: 100.0%; height: 100.0%;">                 <b>Impact Zone</b><br>                 Time: 2024-09-24 12:00<br>                 Wind Speed: 38.6 knots<br>                 Radius: 97 km<br>                 Category: Tropical Storm                 </div>`)[0];
+                popup_63b0a6792a19c9a4bdf7989189a94f6d.setContent(html_f7200449dba2d5a428dabf27da91bf2f);
+            
+        
+
+        circle_3707e8e783e9743672fdb5ca766819eb.bindPopup(popup_63b0a6792a19c9a4bdf7989189a94f6d)
+        ;
+
+        
+    
+</script>
+</html>
