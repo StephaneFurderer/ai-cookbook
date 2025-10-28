@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 import logging
 
-from config import (
+from .config import (
     WEATHERLAB_URL_PATTERN, 
     DATA_DIR, 
     get_date_range,
@@ -102,9 +102,9 @@ class HurricaneDataFetcher:
         df = self.download_hurricane_data(start_date, force_download)
         if df is not None and not df.empty:
             data_by_date[start_date] = df
-            logger.info(f"Successfully loaded data for {date}: {len(df)} records")
+            logger.info(f"Successfully loaded data for {start_date}: {len(df)} records")
         else:
-            logger.warning(f"No data available for {date}")
+            logger.warning(f"No data available for {start_date}")
         
         return data_by_date
     

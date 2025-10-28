@@ -11,7 +11,7 @@ import requests
 import os
 from datetime import datetime, timedelta
 
-from config import (
+from .config import (
     MAJOR_AIRPORTS,
     ATLANTIC_REGION_BOUNDS,
     AIRPORT_COLORS

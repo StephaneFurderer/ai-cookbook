@@ -8,7 +8,7 @@ from typing import Dict, List, Optional
 import logging
 from datetime import datetime, timedelta
 
-from config import INSURANCE_PARAMS
+from .config import INSURANCE_PARAMS
 
 logger = logging.getLogger(__name__)
 

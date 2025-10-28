@@ -10,12 +10,12 @@ from typing import Dict, List, Optional
 import os
 import json
 
-from data_fetcher import HurricaneDataFetcher
-from hurricane_analyzer import HurricaneAnalyzer
-from airport_impact import AirportImpact
-from insurance_calculator import InsuranceCalculator
-from visualizer import HurricaneVisualizer
-from config import DEFAULT_START_DATE, DEFAULT_END_DATE, OUTPUTS_DIR
+from .data_fetcher import HurricaneDataFetcher
+from .hurricane_analyzer import HurricaneAnalyzer
+from .airport_impact import AirportImpact
+from .insurance_calculator import InsuranceCalculator
+from .visualizer import HurricaneVisualizer
+from .config import DEFAULT_START_DATE, DEFAULT_END_DATE, OUTPUTS_DIR, DATA_DIR
 
 # Set up logging
 logging.basicConfig(
@@ -31,9 +31,10 @@ logger = logging.getLogger(__name__)
 class HurricaneImpactPipeline:
     """Main pipeline for hurricane impact analysis."""
     
-    def __init__(self, outputs_dir: str = OUTPUTS_DIR):
+    def __init__(self, outputs_dir: str = OUTPUTS_DIR, data_dir: str = DATA_DIR):
         self.outputs_dir = outputs_dir
-        self.fetcher = HurricaneDataFetcher()
+        self.data_dir = data_dir
+        self.fetcher = HurricaneDataFetcher(data_dir=data_dir)
         self.analyzer = HurricaneAnalyzer()
         self.airport_impact = AirportImpact()
         self.calculator = InsuranceCalculator()

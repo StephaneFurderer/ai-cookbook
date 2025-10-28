@@ -134,7 +134,8 @@ def get_hurricane_category(wind_speed_knots: float) -> str:
 
 def get_weatherlab_url(date_str: str) -> str:
     """Generate WeatherLab URL for a specific date."""
-    return WEATHERLAB_URL_PATTERN.format(date=date_str)
+    date_str_replaced = date_str.replace('-', '_')
+    return WEATHERLAB_URL_PATTERN.format(date=date_str_replaced)
 
 def get_date_range(start_date: str, end_date: str) -> List[str]:
     """Generate list of dates between start and end date."""

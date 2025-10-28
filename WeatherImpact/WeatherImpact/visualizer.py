@@ -13,7 +13,7 @@ import logging
 from datetime import datetime
 import os
 
-from config import (
+from .config import (
     MAP_CENTER,
     MAP_ZOOM,
     DEFAULT_MAP_TILES,

@@ -11,8 +11,8 @@ from datetime import datetime, timedelta
 from typing import Optional
 import json
 
-from pipeline import HurricaneImpactPipeline
-from config import OUTPUTS_DIR
+from .pipeline import HurricaneImpactPipeline
+from .config import OUTPUTS_DIR
 
 # Set up logging for CRON environment
 logging.basicConfig(

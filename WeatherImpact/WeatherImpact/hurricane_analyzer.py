@@ -11,7 +11,7 @@ from geopy.distance import geodesic
 import shapely.geometry as geom
 from shapely.ops import unary_union
 
-from config import (
+from .config import (
     MIN_WIND_SPEED_KNOTS,
     IMPACT_ZONE_BUFFER_KM,
     MAX_FORECAST_DAYS,
