@@ -1,0 +1,3 @@
+[submodule "hurricane-risk-api"]
+	path = hurricane-risk-api
+	url = https://github.com/StephaneFurderer/hurricane-risk-api.git
