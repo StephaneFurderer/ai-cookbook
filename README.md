@@ -20,7 +20,15 @@ And after today, you’ll know how to build it yourself so that your team can mo
 
 # II. How To Think Automation in 2025? 3 Pain Points And 1 Framework
 
+## 3 Painpoints shared by most of actuarial departments - studies show:
 
+3 Painpoints that get in the way of leveraging more value out of actuarial departments:
+
+(1) How to ingest new data? In Real time? (modularity)
+(2) How to turn our models / business logic into a pipeline? (production-ready)
+(3) How fast is it for our ideas to be integrated into existing architecture (ecosystem)
+
+## Actuarial strength: quickly blend in-house systems with external-high-quality data
 So in this section, I want to walk you through how we think about integrating external forecast data into an operational predictive pipeline, and why this matters more than ever.
 
 Today, our predictive model is strong — it’s our in-house intelligence layer.
@@ -29,7 +37,7 @@ It comes from how quickly we can blend our internal predictions with high-qualit
 
 And in 2025, this external data landscape has completely changed.
 
-## AI-based weather models from Google outperforming traditional methods.
+## POV: AI-based weather models from Google outperforming traditional methods.
 For the first time, AI-based weather models like the ones Google has released to the community are outperforming traditional meteorological methods. 
 These models are incredibly accurate, and they’re freely accessible. 
 This means that the companies who are able to rapidly source, integrate, and operationalize these forecasts will get a material edge in risk anticipation.
@@ -42,7 +50,7 @@ Let’s take hurricanes as an example.
 You can download historic and real-time storm forecasts as CSVs. But manually pulling, cleaning, structuring, and feeding them into your model is slow, error-prone, and absolutely not scalable when you need real-time decisions.
 This is where modularity becomes essential.
 
-## Think Modules
+## 1 Framework: Think Modules
 
 We build a small in-house API on top of these external datasets — a clean interface that retrieves the data, formats it properly, and exposes it so your automation tools and models can digest it reliably.
 The moment you do that, something powerful happens:
