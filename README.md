@@ -1,4 +1,4 @@
-# Introduction
+# I. Actuaries should own their pipelines
 Let’s build something practical today. 
 A rapid-prototyping automation for insurance operations, powered by Python, n8n and FastAPI. 
 
@@ -18,7 +18,7 @@ A service that pulls event data every day, blends it with your traveler volumes,
 One small system, reliable, and tailored to your risks. 
 And after today, you’ll know how to build it yourself so that your team can move quicly when it matters.
 
-# Framework
+# II. How To Think Automation in 2025? 3 Pain Points And 1 Framework
 
 
 So in this section, I want to walk you through how we think about integrating external forecast data into an operational predictive pipeline, and why this matters more than ever.
@@ -68,7 +68,7 @@ So the purpose of this section is simple:
 Show that modern predictive operations are not just about better models — they are about better pipelines.
 Pipelines that source the right data, format it correctly, combine it intelligently, and surface only what the business needs to act.
 
-# LIGHT API: FASTAPI + RAILWAY
+# III. How To Build Lightweight API using FASTAPI and RAILWAY
 
 Alright, so now let’s jump into the third section of our presentation, where I’m going to show you how we can very quickly create and deploy an API that powers the automation layer we discussed earlier.
 
